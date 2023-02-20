@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
     private void getResponse(String message) {
         chatsModelArrayList.add(new ChatsModel(message, USER_KEY));
         chatRVAdapter.notifyDataSetChanged();
-        String url = "http://api.brainshop.ai/get?bid=172791&key=59I5pDeKBgWahbSt&uid=[uid]&msg="+message;
-        String BASE_URL = "http://api.brainshop.ai/";
+        String url = "https://api-inference.huggingface.co/models/microsoft/BioGPT-Large"+message;
+        String BASE_URL = "https://api-inference.huggingface.co/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
